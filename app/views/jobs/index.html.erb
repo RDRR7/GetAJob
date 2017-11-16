@@ -1,0 +1,16 @@
+<table>
+    <tr>
+        <th>Description</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Education</th>
+    </tr>
+    <% @jobs.each do |job| %>
+        <tr>
+          <td><%= job.description %></td>
+          <td><%= job.age %></td>
+          <td><%= job.gender %></td>
+          <td><%= job.education %></td>
+        </tr>
+      <% end %>
+</table>
