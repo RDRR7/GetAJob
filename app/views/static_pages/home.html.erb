@@ -3,9 +3,13 @@
         <header>
             <p id="logo">Get<span>A</span>Job</p>
             <nav>
-                <a href=<%= root_path %>>Home</a>
-                <a href="#">Login</a>
-                <a href="#">Sign up</a>
+                <% if current_user.nil? %>
+                    <a href=<%= new_user_session_path %>>Login</a>
+                    <a href=<%= new_user_registration_path %>>Sign up</a>
+                <% else %>
+                    <a href="#">Home</a>
+                    <a href=<%= destroy_user_session_path %> data-method="delete">Log out</a>
+                <% end %>
             </nav>
         </header>
         <div class="content">
