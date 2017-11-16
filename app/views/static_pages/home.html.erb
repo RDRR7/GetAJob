@@ -3,12 +3,16 @@
         <header>
             <p id="logo">Get<span>A</span>Job</p>
             <nav>
-                <% if current_user.nil? %>
+                <% if current_user.nil? and current_company.nil?%>
                     <a href=<%= new_user_session_path %>>Login</a>
                     <a href=<%= new_user_registration_path %>>Sign up</a>
                 <% else %>
                     <a href="#">Home</a>
-                    <a href=<%= destroy_user_session_path %> data-method="delete">Log out</a>
+                    <% if current_company.nil? %>
+                        <a href=<%= destroy_user_session_path %> data-method="delete">Log out</a>
+                    <% else %>
+                        <a href=<%= destroy_company_session_path %> data-method="delete">Log out</a>
+                    <% end %>
                 <% end %>
             </nav>
         </header>
@@ -34,7 +38,7 @@
         <div class="service">
             <h3>Companies</h3>
             <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.</p>
-            <a href="#" class="button button_highlight button_small">Learn More</a>
+            <a href=<%= new_company_registration_path %> class="button button_highlight button_small">Learn More</a>
         </div>
 
         <div class="service">

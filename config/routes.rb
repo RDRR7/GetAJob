@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :companies
   devise_for :users
   get 'static_pages/home'
   get 'home', to: 'static_pages#dashboard'
