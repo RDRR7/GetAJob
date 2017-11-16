@@ -1,1 +1,5 @@
 <h1>Jobs</h1>
+<% if not current_company.nil? %>
+    <%= link_to "New job", new_company_job_path(current_company) %>
+    <%= link_to "My Jobs", company_jobs_path(current_company) %>
+<% end %>

@@ -1,0 +1,27 @@
+<h2>New Job</h2>
+
+<%= form_for [@company, @job] do |f| %>
+    <div class="field">
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+    </div>
+
+    <div class="field">
+        <%= f.label :age %>
+        <%= f.number_field :age %>
+    </div>
+
+    <div class="field">
+        <%= f.label :gender %>
+        <%= f.select :gender, options_for_select([["Female", 0], ["Male", 1]]) %>
+    </div>
+
+    <div class="field">
+        <%= f.label :education %>
+        <%= f.select :education, options_for_select([["Primary education", 0], ["Secondary education", 1], ["Higher education", 2]]) %>
+    </div>
+
+    <div class="actions">
+        <%= f.submit "Create" %>
+    </div>
+<% end %>

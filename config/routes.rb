@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   devise_for :companies
   devise_for :users
-  get 'static_pages/home'
+
+  resources :companies do
+    resources :jobs
+  end
+  
+  get 'static_pages/homepage'
   get 'home', to: 'static_pages#dashboard'
 
-  root 'static_pages#home'
+  root 'static_pages#homepage'
 end
