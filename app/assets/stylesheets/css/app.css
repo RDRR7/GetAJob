@@ -20,13 +20,17 @@ body {
   font-weight: 700;
   color: #FFFFFF;
   text-decoration: none;
-  text-align: center; }
+  text-align: center;
+  cursor: pointer; }
 
 .button_highlight {
   background: #3e7fb4; }
 
 .button_secondary {
   background: rgba(250, 250, 250, 0.35); }
+
+.button_gray {
+  background: #555; }
 
 .button_small {
   padding: 0.3rem 1.5rem; }
@@ -169,5 +173,39 @@ footer {
     letter-spacing: 1px; }
 
 /* MODULES */
+.sign_up {
+  background-color: #F2F1F8;
+  text-align: center;
+  height: 100vh;
+  vertical-align: middle;
+  padding-top: 3rem; }
+  .sign_up .title {
+    font-size: 2.5rem;
+    color: #3F3D4E;
+    margin: 0; }
+  .sign_up .sub_title {
+    font-size: 1.5rem;
+    color: #B9B7C6;
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto 1rem auto; }
+  .sign_up .input_title {
+    font-size: 1.2rem;
+    color: #3F3D4E;
+    width: 100%;
+    margin: 0 auto 4rem auto; }
+  .sign_up .field {
+    text-align: left;
+    display: inline-block; }
+  .sign_up .button_wrapper {
+    padding: 2rem 0; }
+
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea {
+  position: relative;
+  padding: 10px;
+  border: solid 1px #333;
+  box-shadow: -4px 4px 0 #444;
+  border-radius: 0.25rem;
+  width: 320px; }
 
 /*# sourceMappingURL=app.css.map */
