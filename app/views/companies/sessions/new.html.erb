@@ -1,26 +1,25 @@
-<h2>Log in</h2>
+<div class="sign_in">
+  <h2 class="title">GetAJob</h2>
+  <h3 class="sub_title">Company</h3>
+  <p class="sub_title">Sign in</p>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <a class="input_title">Email</a>
+      <br />
+      <%= f.email_field :email, autofocus: true %>
+      <br />
+      <br>
+    
+      <a class="input_title">Password</a>
+      <br />
+      <%= f.password_field :password, autocomplete: "off" %>
+      <br />
     </div>
-  <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "companies/shared/links" %>
+    <div class="button_wrapper">
+      <%= link_to 'Back', root_path, :class => "button button_gray" %>
+      <%= f.submit "Sign in" , :class => "button button_highlight"%>
+    </div>
+  <% end %>
+</div>
