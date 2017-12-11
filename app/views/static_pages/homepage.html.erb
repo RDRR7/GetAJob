@@ -11,6 +11,7 @@
                         <a href=<%= user_pages_home_path %>>Home</a>
                         <a href=<%= destroy_user_session_path %> data-method="delete">Log out</a>
                     <% else %>
+                        <a href=<%= company_pages_home_path %>>Home</a>
                         <a href=<%= destroy_company_session_path %> data-method="delete">Log out</a>
                     <% end %>
                 <% end %>
@@ -38,7 +39,7 @@
         <div class="service">
             <h3>Companies</h3>
             <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.</p>
-            <a href=<%= new_company_registration_path %> class="button button_highlight button_small">Learn More</a>
+            <a href=<%= company_pages_homepage_path %> class="button button_highlight button_small">Learn More</a>
         </div>
 
         <div class="service">

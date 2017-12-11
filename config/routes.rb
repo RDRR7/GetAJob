@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'company_pages/homepage'
+
+  get 'company_pages/home'
+
   get 'user_pages/home'
 
   devise_for :companies

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     if not current_user.nil?
       user_pages_home_path
     else
-      root_path
+      company_pages_home_path
     end
   end
 end

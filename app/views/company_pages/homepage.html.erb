@@ -1,0 +1,8 @@
+<h1>CompanyPages#homepage</h1>
+<p>Find me in app/views/company_pages/homepage.html.erb</p>
+<% if current_company.nil? and current_user.nil?%>
+    <%= link_to 'Sign in', new_company_session_path %>
+    <%= link_to 'Sign up', new_company_registration_path %>
+<% elsif current_user.nil? %>
+    <a href=<%= destroy_company_session_path %> data-method="delete">Log out</a>
+<% end %>
