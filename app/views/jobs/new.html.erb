@@ -18,13 +18,19 @@
 
             <a class="input_title">Gender</a>
             <br />
-            <%= f.select :gender, options_for_select([["Female", 0], ["Male", 1]]) %>
+            <%= f.select :gender, options_for_select([["", 0], ["Female", 1], ["Male", 2]]) %>
             <br />
             <br>
 
             <a class="input_title">Education</a>
             <br />
-            <%= f.select :education, options_for_select([["Primary education", 0], ["Secondary education", 1], ["Higher education", 2]]) %>
+            <%= f.select :education, options_for_select([["", 0], ["Primary education", 1], ["Secondary education", 2], ["Higher education", 3]]) %>
+            <br />
+            <br>
+
+            <a class="input_title" href=<%= new_category_path%> >Category</a>
+            <br />
+            <%= f.collection_select :category, Category.all, :id, :name %>
             <br />
         </div>
 
