@@ -1,0 +1,50 @@
+<div class="show_job">
+    <h2 class="title">GetAJob</h2>
+    <h3 class="sub_title">Job</h3>
+    <div class="job">
+        <h3>
+            Job <%= @job.id %>
+        </h3>
+        <br>
+        <p>
+            <a class="field_title">Description:</a><br>
+            <%= @job.description %>
+        </p>
+        <p>
+            <% if not @job.age.nil? %>
+                <a class="field_title">Age:</a><br>
+                <%= @job.age %>
+            <% end %>
+        </p>
+        <p>
+            <% if @job.gender == 1 %>
+                <a class="field_title">Gender:</a><br>
+                Female
+            <% elsif @job.gender == 2 %>
+                <a class="field_title">Gender:</a><br>
+                Male
+            <% end %>
+        </p>
+        <p>
+            <% if @job.education == 1 %>
+                <a class="field_title">Education:</a><br>
+                Primary education
+            <% elsif @job.education == 2 %>
+                <a class="field_title">Education:</a><br>
+                Secondary education
+            <% elsif @job.education == 3 %>
+                <a class="field_title">Education:</a><br>
+                Higher education
+            <% end %>
+        </p>
+        <p>
+            <a class="field_title">Category:</a><br>
+            <%= Category.find(@job.category_id).name %>
+        </p>
+        
+        <br>
+        <%= link_to 'Back', company_pages_home_path, :class => "button button_gray button_small" %>
+        <%= link_to 'Change status',  update_status_path(@job),  method: :put, data: { confirm: 'Are you sure?' }, :class => "button button_highlight button_small" %>
+        <%= link_to "Delete", @job, method: :delete, data: { confirm: "You sure?" }, :class => "button button_highlight button_small" %>
+    </div>
+</div>

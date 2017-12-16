@@ -6,7 +6,7 @@
         <div class="field">
             <a class="input_title">Description</a>
             <br />
-            <%= f.text_area :description, required: true %>
+            <%= f.text_area :description, required: true, maxlength: 280 %>
             <br />
             <br>
 
@@ -30,7 +30,7 @@
 
             <a class="input_title" href=<%= new_category_path%> >Category</a>
             <br />
-            <%= f.collection_select :category, Category.all, :id, :name %>
+            <%= f.collection_select :category_id, Category.all, :id, :name %>
             <br />
         </div>
 
