@@ -1,2 +1,19 @@
-<h1>CompanyPages#home</h1>
-<p>Find me in app/views/company_pages/home.html.erb</p>
+<div id="company_home">
+    <h2 class="title">GetAJob</h2>
+    <h3 class="sub_title">Jobs</h3>
+    <%= link_to 'New job', new_company_job_path(current_company), class: "button button_gray button_small" %>
+
+    <div class="wrapper">
+        <% current_company.jobs.where(status: false).each do |job| %>
+            <div class="job">
+                <h3>
+                    Job <%= job.id %>
+                </h3>
+                <p>
+                    <%= truncate(job.description, :length => 120, :separator => ' ') %>
+                </p>
+                <a href="#" class="button button_highlight button_small">See job</a>
+            </div>
+        <% end %>
+    </div>
+</div>

@@ -11,7 +11,7 @@ class JobsController < ApplicationController
         job=company.jobs.build(jobs_params)
 
         if job.save
-            redirect_to home_path
+            redirect_to company_pages_home_path
         else
             render 'new'
         end
@@ -24,6 +24,6 @@ class JobsController < ApplicationController
 
     private
     def jobs_params
-        params.require(:job).permit(:description, :age, :gender, :education)
+        params.require(:job).permit(:description, :age, :gender, :education, :category_id)
     end
 end

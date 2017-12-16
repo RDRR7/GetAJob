@@ -1,27 +1,42 @@
-<h2>New Job</h2>
+<div class="new_job">
+    <h2 class="title">GetAJob</h2>
+    <p class="sub_title">New job</p>
 
-<%= form_for [@company, @job] do |f| %>
-    <div class="field">
-        <%= f.label :description %>
-        <%= f.text_area :description %>
-    </div>
+    <%= form_for [@company, @job] do |f| %>
+        <div class="field">
+            <a class="input_title">Description</a>
+            <br />
+            <%= f.text_area :description %>
+            <br />
+            <br>
 
-    <div class="field">
-        <%= f.label :age %>
-        <%= f.number_field :age %>
-    </div>
+            <a class="input_title">Age</a>
+            <br />
+            <%= f.number_field :age %>
+            <br />
+            <br>
 
-    <div class="field">
-        <%= f.label :gender %>
-        <%= f.select :gender, options_for_select([["Female", 0], ["Male", 1]]) %>
-    </div>
+            <a class="input_title">Gender</a>
+            <br />
+            <%= f.select :gender, options_for_select([["", 0], ["Female", 1], ["Male", 2]]) %>
+            <br />
+            <br>
 
-    <div class="field">
-        <%= f.label :education %>
-        <%= f.select :education, options_for_select([["Primary education", 0], ["Secondary education", 1], ["Higher education", 2]]) %>
-    </div>
+            <a class="input_title">Education</a>
+            <br />
+            <%= f.select :education, options_for_select([["", 0], ["Primary education", 1], ["Secondary education", 2], ["Higher education", 3]]) %>
+            <br />
+            <br>
 
-    <div class="actions">
-        <%= f.submit "Create" %>
-    </div>
-<% end %>
+            <a class="input_title" href=<%= new_category_path%> >Category</a>
+            <br />
+            <%= f.collection_select :category, Category.all, :id, :name %>
+            <br />
+        </div>
+
+        <div class="button_wrapper">
+            <%= link_to 'Back', root_path, :class => "button button_gray" %>
+            <%= f.submit "Create" , :class => "button button_highlight"%>
+        </div>
+    <% end %>
+</div>

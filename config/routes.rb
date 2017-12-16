@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :companies do
-    resources :jobs
+    resources :jobs, only: [:new, :create]
   end
+
+  resources :categories, only: [:new, :create]
   
   get 'static_pages/homepage'
 

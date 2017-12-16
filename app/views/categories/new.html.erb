@@ -1,0 +1,18 @@
+<div class="new_category">
+    <h2 class="title">GetAJob</h2>
+    <p class="sub_title">New category</p>
+
+    <%= form_for [@category] do |f| %>
+        <div class="field">
+            <a class="input_title">Name</a>
+            <br />
+            <%= f.text_field :name %>
+            <br />
+            <br>
+
+        <div class="button_wrapper">
+            <%= link_to 'Back',  new_company_job_path(current_company), :class => "button button_gray" %>
+            <%= f.submit "Create" , :class => "button button_highlight"%>
+        </div>
+    <% end %>
+</div>
