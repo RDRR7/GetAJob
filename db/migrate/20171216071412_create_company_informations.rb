@@ -1,6 +1,7 @@
 class CreateCompanyInformations < ActiveRecord::Migration[5.1]
   def change
     create_table :company_informations do |t|
+      t.string :name
       t.string :contact
       t.string :description
       t.string :location

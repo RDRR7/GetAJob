@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20171216182634) do
   end
 
   create_table "company_informations", force: :cascade do |t|
+    t.string "name"
     t.string "contact"
     t.string "description"
     t.string "location"

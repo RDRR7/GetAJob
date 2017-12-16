@@ -1,4 +1,5 @@
 class CompanyInformationsController < ApplicationController
+  before_action :authenticate_company!
   def new
     @company=Company.find(params[:company_id])
     @info=@company.build_company_information
@@ -32,6 +33,6 @@ class CompanyInformationsController < ApplicationController
 
   private
   def company_information_params
-      params.require(:company_information).permit(:description, :contact, :location)
+      params.require(:company_information).permit(:name, :description, :contact, :location)
   end
 end
