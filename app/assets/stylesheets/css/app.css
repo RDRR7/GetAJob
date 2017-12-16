@@ -487,4 +487,82 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
       width: 100%;
       margin: 0 auto 4rem auto; }
 
+.new_user_information {
+  background-color: #F2F1F8;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 3rem;
+  min-height: 87vh; }
+  .new_user_information .title {
+    font-size: 2.5rem;
+    color: #3F3D4E;
+    margin: 0; }
+  .new_user_information .sub_title {
+    font-size: 1.5rem;
+    color: #B9B7C6;
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto -1rem auto; }
+  .new_user_information .input_title {
+    font-size: 1.2rem;
+    color: #3F3D4E;
+    width: 100%;
+    margin: 0 auto 4rem auto; }
+  .new_user_information .field {
+    text-align: left;
+    display: inline-block; }
+  .new_user_information .button_wrapper {
+    padding: 2rem 0; }
+  .new_user_information a {
+    text-decoration: none; }
+
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select {
+  position: relative;
+  padding: 10px;
+  border: solid 1px #333;
+  box-shadow: -4px 4px 0 #444;
+  border-radius: 0.25rem;
+  min-width: 320px;
+  width: 100%;
+  font-family: Helvetica, sans-serif; }
+
+.edit_user_information {
+  background-color: #F2F1F8;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 3rem;
+  min-height: 87vh; }
+  .edit_user_information .title {
+    font-size: 2.5rem;
+    color: #3F3D4E;
+    margin: 0; }
+  .edit_user_information .sub_title {
+    font-size: 1.5rem;
+    color: #B9B7C6;
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto -1rem auto; }
+  .edit_user_information .input_title {
+    font-size: 1.2rem;
+    color: #3F3D4E;
+    width: 100%;
+    margin: 0 auto 4rem auto; }
+  .edit_user_information .field {
+    text-align: left;
+    display: inline-block; }
+  .edit_user_information .button_wrapper {
+    padding: 2rem 0; }
+  .edit_user_information a {
+    text-decoration: none; }
+
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select {
+  position: relative;
+  padding: 10px;
+  border: solid 1px #333;
+  box-shadow: -4px 4px 0 #444;
+  border-radius: 0.25rem;
+  min-width: 320px;
+  width: 100%;
+  font-family: Helvetica, sans-serif; }
+
 /*# sourceMappingURL=app.css.map */

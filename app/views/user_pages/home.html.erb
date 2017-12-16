@@ -1,2 +1,5 @@
-<h1>UserPages#home</h1>
-<p>Find me in app/views/user_pages/home.html.erb</p>
+<nav style="padding: 1rem 1rem;">
+    <a href=<%= user_pages_home_path %> class="button button_gray button_small">Home</a>
+    <a href=<%= edit_user_user_information_path(current_user, current_user.user_information) %> class="button button_gray button_small">My info</a>
+    <a href=<%= destroy_user_session_path %> data-method="delete", class="button button_gray button_small">Log out</a>
+</nav>

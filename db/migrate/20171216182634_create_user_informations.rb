@@ -8,6 +8,7 @@ class CreateUserInformations < ActiveRecord::Migration[5.1]
       t.integer :gender
       t.integer :education
       t.boolean :status, default: false
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

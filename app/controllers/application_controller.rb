@@ -3,7 +3,11 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if not current_user.nil?
-      user_pages_home_path
+      if current_user.user_information.nil?
+        new_user_user_information_path(current_user)
+      else
+        user_pages_home_path
+      end
     elsif not current_company.nil?
       if current_company.company_information.nil?
         new_company_company_information_path(current_company)
