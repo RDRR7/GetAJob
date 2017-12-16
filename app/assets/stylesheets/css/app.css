@@ -47,6 +47,14 @@ body {
 .cf:after {
   clear: both; }
 
+nav {
+  float: right; }
+  nav a {
+    color: #FFFFFF;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 2rem; }
+
 /* LAYOUTS */
 #banner {
   background-image: url("/assets/hands.jpg");
@@ -62,13 +70,6 @@ body {
     margin: 0; }
     #banner #logo span {
       font-weight: 400; }
-  #banner nav {
-    float: right; }
-    #banner nav a {
-      color: #FFFFFF;
-      font-weight: 700;
-      text-decoration: none;
-      margin-left: 2rem; }
   #banner .content {
     padding: 4rem 0 8rem 0; }
     #banner .content .title,
@@ -248,7 +249,6 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
 .new_job {
   background-color: #F2F1F8;
   text-align: center;
-  height: 100vh;
   vertical-align: middle;
   padding-top: 3rem; }
   .new_job .title {
@@ -260,7 +260,7 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
     color: #B9B7C6;
     width: 600px;
     max-width: 100%;
-    margin: 0 auto 1rem auto; }
+    margin: 0 auto -1rem auto; }
   .new_job .input_title {
     font-size: 1.2rem;
     color: #3F3D4E;
