@@ -44,7 +44,7 @@
         
         <br>
         <%= link_to 'Back', company_pages_home_path, :class => "button button_gray button_small" %>
-        <%= link_to 'Change status',  update_status_path(@job),  method: :put, data: { confirm: 'Are you sure?' }, :class => "button button_highlight button_small" %>
+        <%= link_to 'Change status',  job_update_status_path(@job),  method: :put, data: { confirm: 'Are you sure?' }, :class => "button button_highlight button_small" %>
         <%= link_to "Delete", @job, method: :delete, data: { confirm: "You sure?" }, :class => "button button_highlight button_small" %>
     </div>
 </div>
