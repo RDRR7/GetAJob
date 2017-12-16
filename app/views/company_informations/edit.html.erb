@@ -4,6 +4,12 @@
 
     <%= form_for [@company, @info] do |f| %>
         <div class="field">
+            <a class="input_title">Name</a>
+            <br />
+            <%= f.text_field :name, required: true %>
+            <br />
+            <br>
+
             <a class="input_title">Description</a>
             <br />
             <%= f.text_area :description, required: true %>
