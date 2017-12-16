@@ -325,9 +325,10 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
 #company_home {
   background-color: #F2F1F8;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
   vertical-align: middle;
-  padding-top: 3rem; }
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
   #company_home .button_gray {
     position: absolute;
     top: 1em;
