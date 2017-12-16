@@ -282,8 +282,7 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
   border-radius: 0.25rem;
   min-width: 320px;
   width: 100%;
-  font-family: Helvetica, sans-serif;
-  margin: 0 0; }
+  font-family: Helvetica, sans-serif; }
 
 .new_category {
   background-color: #F2F1F8;
@@ -322,5 +321,47 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
   width: 100%;
   font-family: Helvetica, sans-serif;
   margin: 0 0; }
+
+#company_home {
+  background-color: #F2F1F8;
+  text-align: center;
+  height: 100vh;
+  vertical-align: middle;
+  padding-top: 3rem; }
+  #company_home .button_gray {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    z-index: 100; }
+  #company_home .title {
+    font-size: 2.5rem;
+    color: #3F3D4E;
+    margin: 0; }
+  #company_home .sub_title {
+    font-size: 1.5rem;
+    color: #B9B7C6;
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto 1rem auto; }
+  #company_home .job {
+    background: #FFFFFF;
+    display: inline-block;
+    width: 31%;
+    margin: 2rem 1% 0 1%;
+    padding: 3rem 2.5%;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    -moz-box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    border-radius: 0.35rem; }
+    #company_home .job h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #3F3D4E; }
+    #company_home .job p {
+      margin: 0 0 2rem 0;
+      color: #3F3D4E; }
+    #company_home .job .button {
+      padding: 0.5rem 2rem; }
 
 /*# sourceMappingURL=app.css.map */

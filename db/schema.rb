@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20171215072211) do
     t.integer "age"
     t.integer "gender"
     t.integer "education"
+    t.boolean "status", default: false
     t.integer "company_id"
     t.integer "category_id"
     t.datetime "created_at", null: false

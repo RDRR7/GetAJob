@@ -11,7 +11,7 @@ class JobsController < ApplicationController
         job=company.jobs.build(jobs_params)
 
         if job.save
-            redirect_to company_home_homepage_path
+            redirect_to company_pages_home_path
         else
             render 'new'
         end
