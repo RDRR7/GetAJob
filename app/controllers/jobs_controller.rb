@@ -17,9 +17,25 @@ class JobsController < ApplicationController
         end
     end
 
+    def show
+        @job=Job.find(params[:id])
+    end
+
     def index
         company=Company.find(params[:company_id])
         @jobs=company.jobs
+    end
+
+    def destroy
+        Job.find(params[:id]).destroy
+        redirect_to company_pages_home_path
+    end
+
+    def update_status
+        job=Job.find(params[:id])
+        if job.update(status: true)
+            redirect_to company_pages_home_path
+        end
     end
 
     private
