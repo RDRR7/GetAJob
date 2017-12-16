@@ -43,8 +43,13 @@
         </p>
         
         <br>
-        <%= link_to 'Back', company_pages_home_path, :class => "button button_gray button_small" %>
-        <%= link_to 'Change status',  job_update_status_path(@job),  method: :put, data: { confirm: 'Are you sure?' }, :class => "button button_highlight button_small" %>
-        <%= link_to "Delete", @job, method: :delete, data: { confirm: "You sure?" }, :class => "button button_highlight button_small" %>
+        <% if not current_company.nil? %>
+            <%= link_to 'Back', company_pages_home_path, :class => "button button_gray button_small" %>
+            <%= link_to 'Change status',  job_update_status_path(@job),  method: :put, data: { confirm: 'Are you sure?' }, :class => "button button_highlight button_small" %>
+            <%= link_to "Delete", @job, method: :delete, data: { confirm: "You sure?" }, :class => "button button_highlight button_small" %>
+        <% elsif not current_user.nil? %>
+            <%= link_to 'Back', user_pages_home_path, :class => "button button_gray button_small" %>
+            <%= link_to 'Show interest',  job_update_status_path(@job),  method: :put, data: { confirm: 'Are you sure?' }, :class => "button button_highlight button_small" %>
+        <% end %>
     </div>
 </div>
