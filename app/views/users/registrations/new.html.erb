@@ -6,19 +6,19 @@
     <div class="field">
       <a class="input_title">Email</a>
       <br />
-      <%= f.email_field :email, autofocus: true%>
+      <%= f.email_field :email, autofocus: true, required: true %>
       <br />
       <br>
 
       <a class="input_title">Password</a>
       <br />
-      <%= f.password_field :password, autocomplete: "off"%>
+      <%= f.password_field :password, autocomplete: "off", required: true %>
       <br />
       <br>
 
       <a class="input_title">Password confirmation</a>
       <br />
-      <%= f.password_field :password_confirmation, autocomplete: "off"%>
+      <%= f.password_field :password_confirmation, autocomplete: "off", required: true %>
       <br />
     </div>
 

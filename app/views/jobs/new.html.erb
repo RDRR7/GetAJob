@@ -6,13 +6,13 @@
         <div class="field">
             <a class="input_title">Description</a>
             <br />
-            <%= f.text_area :description %>
+            <%= f.text_area :description, required: true %>
             <br />
             <br>
 
             <a class="input_title">Age</a>
             <br />
-            <%= f.number_field :age %>
+            <%= f.number_field :age, min: 0 %>
             <br />
             <br>
 
@@ -35,7 +35,7 @@
         </div>
 
         <div class="button_wrapper">
-            <%= link_to 'Back', root_path, :class => "button button_gray" %>
+            <%= link_to 'Back', company_pages_home_path, :class => "button button_gray" %>
             <%= f.submit "Create" , :class => "button button_highlight"%>
         </div>
     <% end %>
