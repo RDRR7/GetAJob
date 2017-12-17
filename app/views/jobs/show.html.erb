@@ -57,25 +57,27 @@
 </div>
 
 <% if not current_company.nil? %>
-    <div class="interests">
-        <div class="card">
-            <h3>
-                Users interested
-            </h3>
-            
-            <br>
-            <% @job.interests.each do |interest| %>
-                <table>
-                    <tr>
-                        <td><%= interest.user.user_information.name %></td>
-                        <% if interest.user.user_information.status %>
-                            <td>Unavaliable</td>
-                        <% else %>
-                            <td>Avaliable</td>
-                        <% end %>
-                    </tr>
-                </table>
-            <% end %>            
+    <% if not @job.interests.blank? %>
+        <div class="interests">
+            <div class="card">
+                <h3>
+                    Users interested
+                </h3>
+                
+                <br>
+                <% @job.interests.each do |interest| %>
+                    <table>
+                        <tr>
+                            <td><%= interest.user.user_information.name %></td>
+                            <% if interest.user.user_information.status %>
+                                <td>Unavaliable</td>
+                            <% else %>
+                                <td>Avaliable</td>
+                            <% end %>
+                        </tr>
+                    </table>
+                <% end %>            
+            </div>
         </div>
-    </div>
+    <% end %>
 <% end %>
