@@ -49,7 +49,33 @@
             <%= link_to "Delete", @job, method: :delete, data: { confirm: "You sure?" }, :class => "button button_highlight button_small" %>
         <% elsif not current_user.nil? %>
             <%= link_to 'Back', user_pages_home_path, :class => "button button_gray button_small" %>
-            <%= link_to 'Show interest',  job_update_status_path(@job),  method: :put, data: { confirm: 'Are you sure?' }, :class => "button button_highlight button_small" %>
+            <% if Interest.where(job_id: @job.id, user_id: current_user.id).first.nil? %>
+                <%= link_to 'Show interest',  job_interests_path(@job, user_id: current_user.id),  method: :post, data: { confirm: 'Are you sure?' }, :class => "button button_highlight button_small" %>
+            <% end %>    
         <% end %>
     </div>
 </div>
+
+<% if not current_company.nil? %>
+    <div class="interests">
+        <div class="card">
+            <h3>
+                Users interested
+            </h3>
+            
+            <br>
+            <% @job.interests.each do |interest| %>
+                <table>
+                    <tr>
+                        <td><%= interest.user.user_information.name %></td>
+                        <% if interest.user.user_information.status %>
+                            <td>Unavaliable</td>
+                        <% else %>
+                            <td>Avaliable</td>
+                        <% end %>
+                    </tr>
+                </table>
+            <% end %>            
+        </div>
+    </div>
+<% end %>

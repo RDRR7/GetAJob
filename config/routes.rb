@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   put 'jobs/:id/update_status', to: 'jobs#update_status', as: 'job_update_status'
 
   resources :jobs, only: [:show, :destroy]
+
+  resources :jobs do
+    resources :interests, only: [:create]
+  end
   
   resources :companies do
     resources :jobs, only: [:new, :create, :edit, :update]
