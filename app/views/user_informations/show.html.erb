@@ -1,0 +1,49 @@
+<div class="show_user_information">
+    <h2 class="title">GetAJob</h2>
+    <h3 class="sub_title">User</h3>
+    <div class="card">
+        <h3>
+            User <%= @info.user.id %>
+        </h3>
+        <br>
+        <p>
+            <a class="field_title">Name:</a><br>
+            <%= @info.name %>
+        </p>
+        <p>
+            <a class="field_title">About me:</a><br>
+            <%= @info.about_me %>
+        </p>
+        <p>
+            <% if @info.gender == 1 %>
+                <a class="field_title">Gender:</a><br>
+                Female
+            <% elsif @info.gender == 2 %>
+                <a class="field_title">Gender:</a><br>
+                Male
+            <% end %>
+        </p>
+        <p>
+            <% if @info.education == 1 %>
+                <a class="field_title">Education:</a><br>
+                Primary education
+            <% elsif @info.education == 2 %>
+                <a class="field_title">Education:</a><br>
+                Secondary education
+            <% elsif @info.education == 3 %>
+                <a class="field_title">Education:</a><br>
+                Higher education
+            <% end %>
+        </p>
+        <p>
+            <a class="field_title">Contact:</a><br>
+            <%= @info.user.email %><br>
+            <%= @info.contact %>
+        </p>
+        
+        <br>
+        <% if not current_company.nil? %>
+            <%= link_to 'Back', company_pages_home_path, :class => "button button_gray" %>
+        <% end %>
+    </div>
+</div>

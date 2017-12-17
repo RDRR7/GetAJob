@@ -23,6 +23,10 @@ body {
   text-align: center;
   cursor: pointer; }
 
+.button_square {
+  border-radius: 0;
+  padding: 0.6rem 2.5rem; }
+
 .button_highlight {
   background: #3e7fb4; }
 
@@ -31,6 +35,12 @@ body {
 
 .button_gray {
   background: #555; }
+
+.button_green {
+  background: #31B341; }
+
+.button_red {
+  background: #BD3333; }
 
 .button_small {
   padding: 0.3rem 1.5rem; }
@@ -173,6 +183,42 @@ footer {
     color: #ffffff;
     letter-spacing: 1px; }
 
+#company_banner {
+  background-image: url("/assets/people.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+  #company_banner header {
+    padding: 2rem 0; }
+  #company_banner #logo {
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 1.35rem;
+    float: left;
+    margin: 0;
+    text-decoration: none; }
+    #company_banner #logo span {
+      font-weight: 400; }
+  #company_banner .content {
+    padding: 4rem 0 8rem 0; }
+    #company_banner .content .title,
+    #company_banner .content .sub_title {
+      color: #FFFFFF;
+      text-align: center; }
+    #company_banner .content .title {
+      font-size: 3.5rem;
+      margin: 0; }
+    #company_banner .content .sub_title {
+      font-weight: 400;
+      font-size: 1.35rem;
+      width: 500px;
+      margin: 0 auto 2rem auto;
+      line-height: 1.75; }
+    #company_banner .content .button_wrapper {
+      text-align: center;
+      margin: 3rem 0; }
+      #company_banner .content .button_wrapper .button {
+        margin: 0 0.75rem 0; }
+
 /* MODULES */
 .sign_up {
   background-color: #F2F1F8;
@@ -251,7 +297,7 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
   text-align: center;
   vertical-align: middle;
   padding-top: 3rem;
-  min-height: 100vh; }
+  min-height: 85vh; }
   .new_job .title {
     font-size: 2.5rem;
     color: #3F3D4E;
@@ -395,7 +441,7 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
   .new_company_information a {
     text-decoration: none; }
 
-input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select {
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea {
   position: relative;
   padding: 10px;
   border: solid 1px #333;
@@ -434,7 +480,7 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
   .edit_company_information a {
     text-decoration: none; }
 
-input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select {
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea {
   position: relative;
   padding: 10px;
   border: solid 1px #333;
@@ -637,5 +683,135 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
       color: #3F3D4E; }
     #user_home .job .button {
       padding: 0.5rem 2rem; }
+
+#job_index {
+  background-color: #F2F1F8;
+  text-align: center;
+  min-height: 100vh;
+  vertical-align: middle;
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
+  #job_index .title {
+    font-size: 2.5rem;
+    color: #3F3D4E;
+    margin: 0; }
+  #job_index .sub_title {
+    font-size: 1.5rem;
+    color: #B9B7C6;
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto 1rem auto; }
+  #job_index .job {
+    background: #FFFFFF;
+    display: inline-block;
+    width: 31%;
+    margin: 2rem 1% 0 1%;
+    padding: 3rem 2.5%;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    -moz-box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    border-radius: 0.35rem; }
+    #job_index .job h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #3F3D4E; }
+    #job_index .job p {
+      margin: 0 0 2rem 0;
+      color: #3F3D4E; }
+    #job_index .job .button {
+      padding: 0.5rem 2rem; }
+
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea {
+  position: relative;
+  padding: 10px;
+  border: solid 1px #333;
+  box-shadow: -4px 4px 0 #444;
+  border-radius: 0.25rem;
+  min-width: 320px;
+  width: 30%;
+  font-family: Helvetica, sans-serif; }
+
+.show_user_information {
+  background-color: #F2F1F8;
+  text-align: center;
+  min-height: 100vh;
+  vertical-align: middle;
+  padding: 3rem 3rem; }
+  .show_user_information .title {
+    font-size: 2.5rem;
+    color: #3F3D4E;
+    margin: 0; }
+  .show_user_information .sub_title {
+    font-size: 1.5rem;
+    color: #B9B7C6;
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto 1rem auto; }
+  .show_user_information .button_wrapper {
+    padding: 2rem 0; }
+  .show_user_information .card {
+    background: #FFFFFF;
+    margin: 2rem 25% 0 25%;
+    padding: 3rem 2.5%;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    -moz-box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    border-radius: 0.35rem;
+    max-width: 50%; }
+    .show_user_information .card h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #3F3D4E; }
+    .show_user_information .card p {
+      margin: 0 0 2rem 0;
+      color: #3F3D4E; }
+    .show_user_information .card .field_title {
+      font-size: 1.2rem;
+      color: #3F3D4E;
+      width: 100%;
+      margin: 0 auto 4rem auto; }
+
+.show_company_information {
+  background-color: #F2F1F8;
+  text-align: center;
+  min-height: 100vh;
+  vertical-align: middle;
+  padding: 3rem 3rem; }
+  .show_company_information .title {
+    font-size: 2.5rem;
+    color: #3F3D4E;
+    margin: 0; }
+  .show_company_information .sub_title {
+    font-size: 1.5rem;
+    color: #B9B7C6;
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto 1rem auto; }
+  .show_company_information .button_wrapper {
+    padding: 2rem 0; }
+  .show_company_information .card {
+    background: #FFFFFF;
+    margin: 2rem 25% 0 25%;
+    padding: 3rem 2.5%;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    -moz-box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    border-radius: 0.35rem;
+    max-width: 50%; }
+    .show_company_information .card h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #3F3D4E; }
+    .show_company_information .card p {
+      margin: 0 0 2rem 0;
+      color: #3F3D4E; }
+    .show_company_information .card .field_title {
+      font-size: 1.2rem;
+      color: #3F3D4E;
+      width: 100%;
+      margin: 0 auto 4rem auto; }
 
 /*# sourceMappingURL=app.css.map */

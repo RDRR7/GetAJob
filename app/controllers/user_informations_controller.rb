@@ -1,5 +1,5 @@
 class UserInformationsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
   def new
     @user=User.find(params[:user_id])
     @info=@user.build_user_information
@@ -14,6 +14,13 @@ class UserInformationsController < ApplicationController
     else
         render 'new'
     end
+  end
+
+  def show
+    if current_company.nil? and current_user.nil?
+      redirect_to root_path, alert: "You need to sign in or sign up before continuing"
+    end
+    @info=UserInformation.find(params[:id])
   end
 
   def edit
@@ -37,8 +44,9 @@ class UserInformationsController < ApplicationController
       info.update(status: false)
     else
       info.update(status: true)
+      Interest.where(user_id: info.user_id).destroy_all
     end
-    redirect_to user_pages_home_path
+    redirect_to edit_user_user_information_path(info.user, info)
   end
 
   private

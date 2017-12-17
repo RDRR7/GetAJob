@@ -5,10 +5,16 @@
     <a href=<%= destroy_user_session_path %> data-method="delete", class="button button_gray button_small">Log out</a>
 </nav>
 
-<div id="user_home">
+<div id="job_index">
     <br>
     <h2 class="title">GetAJob</h2>
     <h3 class="sub_title">Jobs</h3>
+    <%= form_tag jobs_path, :method => 'get' do %>
+        <p>
+            <%= text_field_tag :search, params[:search]%>
+            <%= submit_tag "Search", name: nil, class: "button button_highlight button_square" %>
+        </p>
+    <% end %>
 
     <div class="wrapper">
         <% @jobs.each do |job| %>
