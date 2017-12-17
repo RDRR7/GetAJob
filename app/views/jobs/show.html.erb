@@ -48,12 +48,14 @@
         <br>
         <% if not current_company.nil? %>
             <%= link_to 'Back', company_pages_home_path, :class => "button button_gray" %>
-            <% if @job.status %>
-                <%= link_to 'Unavailable',  job_update_status_path(@job),  method: :put, data: { confirm: 'Are you sure?' }, :class => "button button_red" %>
-            <% else %>
-                <%= link_to 'Available',  job_update_status_path(@job),  method: :put, data: { confirm: 'Are you sure?' }, :class => "button button_green" %>
+            <% if @job.company==current_company %>
+                <% if @job.status %>
+                    <%= link_to 'Unavailable',  job_update_status_path(@job),  method: :put, data: { confirm: 'Are you sure?' }, :class => "button button_red" %>
+                <% else %>
+                    <%= link_to 'Available',  job_update_status_path(@job),  method: :put, data: { confirm: 'Are you sure?' }, :class => "button button_green" %>
+                <% end %>
+                <%= link_to "Delete", @job, method: :delete, data: { confirm: "You sure?" }, :class => "button button_highlight" %>
             <% end %>
-            <%= link_to "Delete", @job, method: :delete, data: { confirm: "You sure?" }, :class => "button button_highlight" %>
         <% elsif not current_user.nil? %>
             <%= link_to 'Back', user_pages_home_path, :class => "button button_gray" %>
             <% if Interest.where(job_id: @job.id, user_id: current_user.id).first.nil? %>
@@ -64,23 +66,25 @@
 </div>
 
 <% if not current_company.nil? %>
-    <% if not @job.interests.blank? %>
-        <div class="interests">
-            <div class="card">
-                <h3>
-                    Users interested
-                </h3>
-                
-                <br>
-                <table>
-                    <% @job.interests.each do |interest| %>
-                        <tr>
-                            <td><%= link_to interest.user.user_information.name, interest.user.user_information %></td>
-                            <td><font color="green">Avaliable</font></td>
-                        </tr>
-                    <% end %>            
-                </table>
+    <% if @job.company==current_company %>
+        <% if not @job.interests.blank? %>
+            <div class="interests">
+                <div class="card">
+                    <h3>
+                        Users interested
+                    </h3>
+                    
+                    <br>
+                    <table>
+                        <% @job.interests.each do |interest| %>
+                            <tr>
+                                <td><%= link_to interest.user.user_information.name, interest.user.user_information %></td>
+                                <td><font color="green">Avaliable</font></td>
+                            </tr>
+                        <% end %>            
+                    </table>
+                </div>
             </div>
-        </div>
+        <% end %>
     <% end %>
 <% end %>
