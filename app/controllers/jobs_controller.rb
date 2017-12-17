@@ -1,5 +1,17 @@
 class JobsController < ApplicationController
     before_action :authenticate_company!, only: [:new, :create, :destroy, :update_status]
+    def index
+        if params[:search]
+            info=CompanyInformation.where("name like ?", "%#{params[:search]}%").first
+            if not info.nil?
+                @jobs=info.company.jobs.where(status: false)
+            else
+                redirect_to jobs_path, alert: "No match"
+            end
+        else
+            @jobs=Job.all
+        end
+    end
 
     def new
         @company=Company.find(params[:company_id])

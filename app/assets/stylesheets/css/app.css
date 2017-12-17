@@ -23,6 +23,10 @@ body {
   text-align: center;
   cursor: pointer; }
 
+.button_square {
+  border-radius: 0;
+  padding: 0.6rem 2.5rem; }
+
 .button_highlight {
   background: #3e7fb4; }
 
@@ -395,7 +399,7 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
   .new_company_information a {
     text-decoration: none; }
 
-input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select {
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea {
   position: relative;
   padding: 10px;
   border: solid 1px #333;
@@ -434,7 +438,7 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
   .edit_company_information a {
     text-decoration: none; }
 
-input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select {
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea {
   position: relative;
   padding: 10px;
   border: solid 1px #333;
@@ -637,5 +641,53 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
       color: #3F3D4E; }
     #user_home .job .button {
       padding: 0.5rem 2rem; }
+
+#job_index {
+  background-color: #F2F1F8;
+  text-align: center;
+  min-height: 100vh;
+  vertical-align: middle;
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
+  #job_index .title {
+    font-size: 2.5rem;
+    color: #3F3D4E;
+    margin: 0; }
+  #job_index .sub_title {
+    font-size: 1.5rem;
+    color: #B9B7C6;
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto 1rem auto; }
+  #job_index .job {
+    background: #FFFFFF;
+    display: inline-block;
+    width: 31%;
+    margin: 2rem 1% 0 1%;
+    padding: 3rem 2.5%;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    -moz-box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    border-radius: 0.35rem; }
+    #job_index .job h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #3F3D4E; }
+    #job_index .job p {
+      margin: 0 0 2rem 0;
+      color: #3F3D4E; }
+    #job_index .job .button {
+      padding: 0.5rem 2rem; }
+
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea {
+  position: relative;
+  padding: 10px;
+  border: solid 1px #333;
+  box-shadow: -4px 4px 0 #444;
+  border-radius: 0.25rem;
+  min-width: 320px;
+  width: 30%;
+  font-family: Helvetica, sans-serif; }
 
 /*# sourceMappingURL=app.css.map */
