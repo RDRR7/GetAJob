@@ -1,8 +1,35 @@
-<h1>CompanyPages#homepage</h1>
-<p>Find me in app/views/company_pages/homepage.html.erb</p>
-<% if current_company.nil? and current_user.nil?%>
-    <%= link_to 'Sign in', new_company_session_path %>
-    <%= link_to 'Sign up', new_company_registration_path %>
-<% elsif current_user.nil? %>
-    <a href=<%= destroy_company_session_path %> data-method="delete">Log out</a>
-<% end %>
+<section id="company_banner">
+    <div class="wrapper">
+        <header>
+            <a href=<%= root_path %> id="logo">Get<span>A</span>Job</a>
+            <nav>
+                <% if current_company.nil? and current_user.nil?%>
+                    <a href=<%= new_company_session_path %>>Sign in</a>
+                    <a href=<%= new_company_registration_path%>>Sign up</a>
+                <% elsif current_user.nil? %>
+                    <a href=<%= destroy_company_session_path %> data-method="delete">Log out</a>
+                <% end %>
+            </nav>
+        </header>
+        <div class="content">
+            <h1 class="title">Give a Job</h1>
+            <h2 class="sub_title">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.</h2>
+            <div class="button_wrapper">
+                <a href="#" class="button button_highlight">Learn More</a>
+                <a href="#" class="button button_gray">Play Video</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="wrapper">
+        <h2 class="title">Get in touch</h2>
+        <p class="sub_title">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.</p>
+        <a href="#" class="button button_highlight button_large">Contact Us</a>
+    </div>
+</section>
+
+<footer>
+    <p class="copyright">&copy; 2017 <a>René Rendón</a> / GetAJob</p>
+</footer>

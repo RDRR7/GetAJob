@@ -1,2 +1,26 @@
-<h1>UserPages#home</h1>
-<p>Find me in app/views/user_pages/home.html.erb</p>
+<nav style="padding: 1rem 1rem;">
+    <a href=<%= user_pages_home_path %> class="button button_gray button_small">Home</a>
+    <a href=<%= jobs_path %> class="button button_gray button_small">Jobs</a>
+    <a href=<%= edit_user_user_information_path(current_user, current_user.user_information) %> class="button button_gray button_small">My info</a>
+    <a href=<%= destroy_user_session_path %> data-method="delete", class="button button_gray button_small">Log out</a>
+</nav>
+
+<div id="user_home">
+    <br>
+    <h2 class="title">GetAJob</h2>
+    <h3 class="sub_title">Jobs</h3>
+
+    <div class="wrapper">
+        <% @jobs.each do |job| %>
+            <div class="job">
+                <h3>
+                    <%= job.company.company_information.name %>
+                </h3>
+                <p>
+                    <%= truncate(job.description, :length => 120, :separator => ' ') %>
+                </p>
+                <a href=<%= job_path(job) %> class="button button_highlight button_small">See job</a>
+            </div>
+        <% end %>
+    </div>
+</div>

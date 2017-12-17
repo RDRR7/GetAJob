@@ -1,2 +1,30 @@
-<h1>CompanyPages#home</h1>
-<p>Find me in app/views/company_pages/home.html.erb</p>
+<nav style="padding: 1rem 1rem;">
+    <a href=<%= company_pages_home_path %> class="button button_gray button_small">Home</a>
+    <a href=<%= edit_company_company_information_path(current_company, current_company.company_information) %> class="button button_gray button_small">My info</a>
+    <a href=<%= new_company_job_path(current_company) %> class="button button_gray button_small">New job</a>
+    <a href=<%= destroy_company_session_path %> data-method="delete", class="button button_gray button_small">Log out</a>
+</nav>
+
+<div id="company_home">
+    <br>
+    <h2 class="title">GetAJob</h2>
+    <h3 class="sub_title">Jobs</h3>
+
+    <div class="wrapper">
+        <% current_company.jobs.order(:status).each do |job| %>
+            <div class="job">
+                <h3>
+                    Job <%= job.id %>
+                </h3>
+                <p>
+                    <%= truncate(job.description, :length => 120, :separator => ' ') %>
+                </p>
+                <% if job.status %>
+                    <a href=<%= job_path(job) %> class="button button_red button_small">See job</a>
+                <% else %>
+                    <a href=<%= job_path(job) %> class="button button_green button_small">See job</a>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+</div>

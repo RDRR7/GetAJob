@@ -1,0 +1,36 @@
+<div class="new_company_information">
+    <h2 class="title">GetAJob</h2>
+    <p class="sub_title">Company information</p>
+
+    <%= form_for [@company, @info] do |f| %>
+        <div class="field">
+            <a class="input_title">Name</a>
+            <br />
+            <%= f.text_field :name, required: true %>
+            <br />
+            <br>
+
+            <a class="input_title">Description</a>
+            <br />
+            <%= f.text_area :description, required: true %>
+            <br />
+            <br>
+
+            <a class="input_title">Contact</a>
+            <br />
+            <%= f.telephone_field :contact, required: true %>
+            <br />
+            <br>
+
+            <a class="input_title">Location</a>
+            <br />
+            <%= f.text_area :location, required: true %>
+            <br />
+            <br>
+        </div>
+
+        <div class="button_wrapper">
+            <%= f.submit "Create" , :class => "button button_highlight"%>
+        </div>
+    <% end %>
+</div>

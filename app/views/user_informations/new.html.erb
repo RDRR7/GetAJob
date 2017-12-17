@@ -1,0 +1,47 @@
+<div class="new_user_information">
+    <h2 class="title">GetAJob</h2>
+    <p class="sub_title">User information</p>
+
+    <%= form_for [@user, @info] do |f| %>
+        <div class="field">
+            <a class="input_title">Name</a>
+            <br />
+            <%= f.text_field :name, required: true %>
+            <br />
+            <br>
+
+            <a class="input_title">About me</a>
+            <br />
+            <%= f.text_area :about_me, required: true, maxlength: 280  %>
+            <br />
+            <br>
+
+            <a class="input_title">Contact</a>
+            <br />
+            <%= f.telephone_field :contact, required: true %>
+            <br />
+            <br>
+
+            <a class="input_title">Age</a>
+            <br />
+            <%= f.number_field :age, required: true, min: 0 %>
+            <br />
+            <br>
+
+            <a class="input_title">Gender</a>
+            <br />
+            <%= f.select :gender, options_for_select([["Female", 1], ["Male", 2]]) %>
+            <br />
+            <br>
+
+            <a class="input_title">Education</a>
+            <br />
+            <%= f.select :education, options_for_select([["Primary education", 1], ["Secondary education", 2], ["Higher education", 3]]) %>
+            <br />
+        </div>
+
+        <div class="button_wrapper">
+            <%= f.submit "Create" , :class => "button button_highlight"%>
+        </div>
+    <% end %>
+</div>

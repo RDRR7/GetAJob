@@ -1,16 +1,32 @@
-<table>
-    <tr>
-        <th>Description</th>
-        <th>Age</th>
-        <th>Gender</th>
-        <th>Education</th>
-    </tr>
-    <% @jobs.each do |job| %>
-        <tr>
-          <td><%= job.description %></td>
-          <td><%= job.age %></td>
-          <td><%= job.gender %></td>
-          <td><%= job.education %></td>
-        </tr>
-      <% end %>
-</table>
+<nav style="padding: 1rem 1rem;">
+    <a href=<%= user_pages_home_path %> class="button button_gray button_small">Home</a>
+    <a href=<%= jobs_path %> class="button button_gray button_small">Jobs</a>
+    <a href=<%= edit_user_user_information_path(current_user, current_user.user_information) %> class="button button_gray button_small">My info</a>
+    <a href=<%= destroy_user_session_path %> data-method="delete", class="button button_gray button_small">Log out</a>
+</nav>
+
+<div id="job_index">
+    <br>
+    <h2 class="title">GetAJob</h2>
+    <h3 class="sub_title">Jobs</h3>
+    <%= form_tag jobs_path, :method => 'get' do %>
+        <p>
+            <%= text_field_tag :search, params[:search]%>
+            <%= submit_tag "Search", name: nil, class: "button button_highlight button_square" %>
+        </p>
+    <% end %>
+
+    <div class="wrapper">
+        <% @jobs.each do |job| %>
+            <div class="job">
+                <h3>
+                    <%= job.company.company_information.name %>
+                </h3>
+                <p>
+                    <%= truncate(job.description, :length => 120, :separator => ' ') %>
+                </p>
+                <a href=<%= job_path(job) %> class="button button_highlight button_small">See job</a>
+            </div>
+        <% end %>
+    </div>
+</div>

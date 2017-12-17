@@ -1,0 +1,32 @@
+<div class="show_company_information">
+    <h2 class="title">GetAJob</h2>
+    <h3 class="sub_title">Company</h3>
+    <div class="card">
+        <h3>
+            Company <%= @info.company.id %>
+        </h3>
+        <br>
+        <p>
+            <a class="field_title">Name:</a><br>
+            <%= @info.name %>
+        </p>
+        <p>
+            <a class="field_title">Description:</a><br>
+            <%= @info.description %>
+        </p>
+        <p>
+            <a class="field_title">Contact:</a><br>
+            <%= @info.company.email %><br>
+            <%= @info.contact %>
+        </p>
+        <p>
+            <a class="field_title">Location:</a><br>
+            <%= @info.location %>
+        </p>
+        
+        <br>
+        <% if not current_user.nil? %>
+            <%= link_to 'Back', user_pages_home_path, :class => "button button_gray" %>
+        <% end %>
+    </div>
+</div>
