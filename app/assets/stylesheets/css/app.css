@@ -36,6 +36,12 @@ body {
 .button_gray {
   background: #555; }
 
+.button_green {
+  background: #31B341; }
+
+.button_red {
+  background: #BD3333; }
+
 .button_small {
   padding: 0.3rem 1.5rem; }
 

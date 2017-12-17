@@ -11,7 +11,7 @@
     <h3 class="sub_title">Jobs</h3>
 
     <div class="wrapper">
-        <% current_company.jobs.where(status: false).each do |job| %>
+        <% current_company.jobs.order(:status).each do |job| %>
             <div class="job">
                 <h3>
                     Job <%= job.id %>
@@ -19,7 +19,11 @@
                 <p>
                     <%= truncate(job.description, :length => 120, :separator => ' ') %>
                 </p>
-                <a href=<%= job_path(job) %> class="button button_highlight button_small">See job</a>
+                <% if job.status %>
+                    <a href=<%= job_path(job) %> class="button button_highlight button_small">See job</a>
+                <% else %>
+                    <a href=<%= job_path(job) %> class="button button_green button_small">See job</a>
+                <% end %>
             </div>
         <% end %>
     </div>

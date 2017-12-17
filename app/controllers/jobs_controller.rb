@@ -44,9 +44,13 @@ class JobsController < ApplicationController
 
     def update_status
         job=Job.find(params[:id])
-        if job.update(status: true)
-            redirect_to company_pages_home_path
+        if job.status
+            job.update(status: false)
+        else
+            job.update(status: true)
+            Interest.where(job_id: job.id).destroy_all
         end
+        redirect_to job
     end
 
     private

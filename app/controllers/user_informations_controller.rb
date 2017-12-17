@@ -37,8 +37,9 @@ class UserInformationsController < ApplicationController
       info.update(status: false)
     else
       info.update(status: true)
+      Interest.where(user_id: info.user_id).destroy_all
     end
-    redirect_to user_pages_home_path
+    redirect_to edit_user_user_information_path(info.user, info)
   end
 
   private

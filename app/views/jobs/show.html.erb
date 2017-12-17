@@ -45,7 +45,11 @@
         <br>
         <% if not current_company.nil? %>
             <%= link_to 'Back', company_pages_home_path, :class => "button button_gray button_small" %>
-            <%= link_to 'Change status',  job_update_status_path(@job),  method: :put, data: { confirm: 'Are you sure?' }, :class => "button button_highlight button_small" %>
+            <% if @job.status %>
+                <%= link_to 'Unavailable',  job_update_status_path(@job),  method: :put, data: { confirm: 'Are you sure?' }, :class => "button button_red button_small" %>
+            <% else %>
+                <%= link_to 'Available',  job_update_status_path(@job),  method: :put, data: { confirm: 'Are you sure?' }, :class => "button button_green button_small" %>
+            <% end %>
             <%= link_to "Delete", @job, method: :delete, data: { confirm: "You sure?" }, :class => "button button_highlight button_small" %>
         <% elsif not current_user.nil? %>
             <%= link_to 'Back', user_pages_home_path, :class => "button button_gray button_small" %>
