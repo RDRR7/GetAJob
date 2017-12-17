@@ -30,13 +30,13 @@
 
             <a class="input_title">Gender</a>
             <br />
-            <%= f.select :gender, options_for_select([["Female", 1], ["Male", 2]]) %>
+            <%= f.select :gender, options_for_select([["Female", 1], ["Male", 2]], selected: @info.gender) %>
             <br />
             <br>
 
             <a class="input_title">Education</a>
             <br />
-            <%= f.select :education, options_for_select([["Primary education", 1], ["Secondary education", 2], ["Higher education", 3]]) %>
+            <%= f.select :education, options_for_select([["Primary education", 1], ["Secondary education", 2], ["Higher education", 3]], selected: @info.education) %>
             <br />
         </div>
 
