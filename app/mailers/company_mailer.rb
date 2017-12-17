@@ -1,5 +1,5 @@
 class CompanyMailer < ApplicationMailer
-  default from: "renedavidriveravega@gmail.com"
+  default from: "xxx@gmail.com"
   def shownInterest(company, user)
     @company=company
     @user=user
