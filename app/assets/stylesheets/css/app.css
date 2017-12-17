@@ -487,6 +487,36 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
       width: 100%;
       margin: 0 auto 4rem auto; }
 
+.interests {
+  background-color: #F2F1F8;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0 3rem 3rem 3rem; }
+  .interests .card {
+    background: #FFFFFF;
+    margin: 0 25% 0 25%;
+    padding: 3rem 2.5%;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    -moz-box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    border-radius: 0.35rem;
+    max-width: 50%; }
+    .interests .card h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #3F3D4E; }
+    .interests .card table {
+      border-collapse: collapse;
+      width: 86%;
+      margin: 0 2rem; }
+      .interests .card table th, .interests .card table td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #aaa; }
+      .interests .card table tr:hover {
+        background-color: #f5f5f5; }
+
 .new_user_information {
   background-color: #F2F1F8;
   text-align: center;
@@ -564,5 +594,48 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
   min-width: 320px;
   width: 100%;
   font-family: Helvetica, sans-serif; }
+
+#user_home {
+  background-color: #F2F1F8;
+  text-align: center;
+  min-height: 100vh;
+  vertical-align: middle;
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
+  #user_home .button_gray {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    z-index: 100; }
+  #user_home .title {
+    font-size: 2.5rem;
+    color: #3F3D4E;
+    margin: 0; }
+  #user_home .sub_title {
+    font-size: 1.5rem;
+    color: #B9B7C6;
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto 1rem auto; }
+  #user_home .job {
+    background: #FFFFFF;
+    display: inline-block;
+    width: 31%;
+    margin: 2rem 1% 0 1%;
+    padding: 3rem 2.5%;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    -moz-box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    box-shadow: 0px 0px 57px 0px rgba(4, 6, 9, 0.25);
+    border-radius: 0.35rem; }
+    #user_home .job h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #3F3D4E; }
+    #user_home .job p {
+      margin: 0 0 2rem 0;
+      color: #3F3D4E; }
+    #user_home .job .button {
+      padding: 0.5rem 2rem; }
 
 /*# sourceMappingURL=app.css.map */

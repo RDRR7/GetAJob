@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-    before_action :authenticate_company!
+    before_action :authenticate_company!, only: [:new, :create, :destroy, :update_status]
 
     def new
         @company=Company.find(params[:company_id])
@@ -18,12 +18,11 @@ class JobsController < ApplicationController
     end
 
     def show
-        @job=Job.find(params[:id])
-    end
-
-    def index
-        company=Company.find(params[:company_id])
-        @jobs=company.jobs
+        if current_company.nil? and current_user.nil?
+            redirect_to root_path, alert: "You need to sign in or sign up before continuing"
+        else
+            @job=Job.find(params[:id])
+        end
     end
 
     def destroy
