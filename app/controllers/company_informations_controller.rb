@@ -1,5 +1,5 @@
 class CompanyInformationsController < ApplicationController
-  before_action :authenticate_company!
+  before_action :authenticate_company!, except: [:show]
   def new
     @company=Company.find(params[:company_id])
     @info=@company.build_company_information
@@ -14,6 +14,13 @@ class CompanyInformationsController < ApplicationController
     else
         render 'new'
     end
+  end
+
+  def show
+    if current_company.nil? and current_user.nil?
+      redirect_to root_path, alert: "You need to sign in or sign up before continuing"
+    end
+    @info=CompanyInformation.find(params[:id])
   end
 
   def edit

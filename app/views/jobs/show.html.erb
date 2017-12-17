@@ -3,6 +3,9 @@
     <h3 class="sub_title">Job</h3>
     <div class="job">
         <h3>
+            <% if current_company.nil? %>
+                <a style="margin: 0; font-size: 1.5rem; text-decoration: none; color: #3F3D4E;" href="/company_informations/<%= @job.company.company_information.id %>"><%= @job.company.company_information.name %></a><br>
+            <% end %>
             Job <%= @job.id %>
         </h3>
         <br>
@@ -44,17 +47,17 @@
         
         <br>
         <% if not current_company.nil? %>
-            <%= link_to 'Back', company_pages_home_path, :class => "button button_gray button_small" %>
+            <%= link_to 'Back', company_pages_home_path, :class => "button button_gray" %>
             <% if @job.status %>
-                <%= link_to 'Unavailable',  job_update_status_path(@job),  method: :put, data: { confirm: 'Are you sure?' }, :class => "button button_red button_small" %>
+                <%= link_to 'Unavailable',  job_update_status_path(@job),  method: :put, data: { confirm: 'Are you sure?' }, :class => "button button_red" %>
             <% else %>
-                <%= link_to 'Available',  job_update_status_path(@job),  method: :put, data: { confirm: 'Are you sure?' }, :class => "button button_green button_small" %>
+                <%= link_to 'Available',  job_update_status_path(@job),  method: :put, data: { confirm: 'Are you sure?' }, :class => "button button_green" %>
             <% end %>
-            <%= link_to "Delete", @job, method: :delete, data: { confirm: "You sure?" }, :class => "button button_highlight button_small" %>
+            <%= link_to "Delete", @job, method: :delete, data: { confirm: "You sure?" }, :class => "button button_highlight" %>
         <% elsif not current_user.nil? %>
-            <%= link_to 'Back', user_pages_home_path, :class => "button button_gray button_small" %>
+            <%= link_to 'Back', user_pages_home_path, :class => "button button_gray" %>
             <% if Interest.where(job_id: @job.id, user_id: current_user.id).first.nil? %>
-                <%= link_to 'Show interest',  job_interests_path(@job, user_id: current_user.id),  method: :post, data: { confirm: 'Are you sure?' }, :class => "button button_highlight button_small" %>
+                <%= link_to 'Show interest',  job_interests_path(@job, user_id: current_user.id),  method: :post, data: { confirm: 'Are you sure?' }, :class => "button button_highlight" %>
             <% end %>    
         <% end %>
     </div>
@@ -69,18 +72,14 @@
                 </h3>
                 
                 <br>
-                <% @job.interests.each do |interest| %>
-                    <table>
+                <table>
+                    <% @job.interests.each do |interest| %>
                         <tr>
-                            <td><%= interest.user.user_information.name %></td>
-                            <% if interest.user.user_information.status %>
-                                <td>Unavaliable</td>
-                            <% else %>
-                                <td>Avaliable</td>
-                            <% end %>
+                            <td><%= link_to interest.user.user_information.name, interest.user.user_information %></td>
+                            <td><font color="green">Avaliable</font></td>
                         </tr>
-                    </table>
-                <% end %>            
+                    <% end %>            
+                </table>
             </div>
         </div>
     <% end %>

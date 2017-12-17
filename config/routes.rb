@@ -19,12 +19,16 @@ Rails.application.routes.draw do
   resources :jobs do
     resources :interests, only: [:create]
   end
+
+  resources :company_informations, only: [:show]
   
   resources :companies do
     resources :jobs, only: [:new, :create, :edit, :update]
     resources :company_informations, only: [:new, :create, :edit, :update]
   end
   
+  resources :user_informations, only: [:show]
+
   resources :users do
     resources :user_informations, only: [:new, :create, :edit, :update]
   end

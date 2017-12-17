@@ -20,7 +20,7 @@
                     <%= truncate(job.description, :length => 120, :separator => ' ') %>
                 </p>
                 <% if job.status %>
-                    <a href=<%= job_path(job) %> class="button button_highlight button_small">See job</a>
+                    <a href=<%= job_path(job) %> class="button button_red button_small">See job</a>
                 <% else %>
                     <a href=<%= job_path(job) %> class="button button_green button_small">See job</a>
                 <% end %>

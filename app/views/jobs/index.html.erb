@@ -20,7 +20,7 @@
         <% @jobs.each do |job| %>
             <div class="job">
                 <h3>
-                    Job <%= job.id %>
+                    <%= job.company.company_information.name %>
                 </h3>
                 <p>
                     <%= truncate(job.description, :length => 120, :separator => ' ') %>
